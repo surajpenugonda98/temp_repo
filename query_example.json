@@ -1,0 +1,49 @@
+{
+  "table": "netcool.reporter_status_1",
+  "columns": [
+    "ELEMENT",
+    "ALERTKEY",
+    "ALERTNAME",
+    "SEVERITYDESC",
+    "SUMMARY",
+    "TALLY",
+    "TECHNOLOGY",
+    "MANAGERCLASS",
+    "AMOCLASS",
+    "CLEAREDBY",
+    "CLEARINGREASON",
+    "FAULTOWNER",
+    "FIRSTOCCURRENCE",
+    "LASTOCCURRENCE",
+    "IDENTIFIER",
+    "SERVERSERIAL"
+  ],
+  "filters": [
+    {
+      "column": "FAULTOWNER",
+      "operator": "=",
+      "value": " 18 "
+    },
+    {
+      "column": "MANAGERCLASS",
+      "operator": "=",
+      "value": " Mavenir_MWP_IMS "
+    },
+    {
+      "logical_operator": "OR",
+      "conditions": [
+        {
+          "column": "CLEAREDTIME",
+          "operator": "IS NULL"
+        },
+        {
+          "column": "CLEAREDTIME",
+          "operator": "=",
+          "value": "01-JAN-1970 "
+        }
+      ]
+    }
+  ],
+  "order_by": [],
+  "limit": null
+}
